@@ -1,162 +1,130 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.flex {
+body {
   display: flex;
+  padding: 0 10px;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff 50%, #9d14dc 50%);
 }
 
 .container {
-  padding: 0 15px;
-  min-height: 100vh;
-  justify-content: center;
-  background: #f0f2f5;
+  width: 420px;
+  border-radius: 10px;
+  background: #222;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.facebook-page {
-  justify-content: space-between;
-  max-width: 1000px;
-  width: 100%;
+.container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px 25px;
+  border-bottom: 1px solid #333;
+  color: #fff;
 }
 
-.facebook-page .text {
-  margin-bottom: 90px;
+.container .content {
+  margin: 25px 20px 35px;
 }
 
-.facebook-page h1 {
-  color: #1877f2;
-  font-size: 4rem;
+.content .word {
+  user-select: none;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 18px;
+  margin-right: -18px;
+  word-break: break-all;
+  text-transform: uppercase;
+  color: #5372f0;
+}
+
+.content .details {
+  margin: 25px 0 20px;
+}
+
+.details p {
+  font-size: 18px;
   margin-bottom: 10px;
+  color: #bbb;
 }
 
-.facebook-page p {
-  font-size: 1.75rem;
-  white-space: nowrap;
+.details p b {
+  font-weight: 500;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+.content input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+  border: 1px solid #333;
+  background-color: #111;
+  color: #bbb;
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-form input {
-  height: 55px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  padding: 0 14px;
+.content input:focus {
+  border-color: #5372f0;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-form input:focus {
-  outline: none;
-  border-color: #1877f2;
+.content input::placeholder {
+  color: #555;
 }
 
-::placeholder {
-  color: #777;
-  font-size: 1.063rem;
+.content input:focus::placeholder {
+  color: #bbb;
 }
 
-.link {
+.content .buttons {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 15px;
+  margin-top: 20px;
+  justify-content: space-between;
 }
 
-.link .login {
+.buttons button {
   border: none;
   outline: none;
+  color: #fff;
   cursor: pointer;
-  background: #1877f2;
-  padding: 15px 0;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 600;
-  transition: 0.2s ease;
+  padding: 14px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  width: calc(50% - 6px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.link .login:hover {
-  background: #0d65d9;
+.buttons button:active {
+  transform: scale(0.97);
 }
 
-form a {
-  text-decoration: none;
+.buttons .refresh-word {
+  background: #6c757d;
 }
 
-.link .forgot {
-  color: #1877f2;
-  font-size: 0.875rem;
+.buttons .refresh-word:hover {
+  background: #5f666d;
 }
 
-.link .forgot:hover {
-  text-decoration: underline;
+.buttons .check-word {
+  background: #5372f0;
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background-color: #ccc;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.button {
-  margin-top: 25px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.button a {
-  padding: 15px 20px;
-  background: #42b72a;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 1.063rem;
-  font-weight: 600;
-  transition: 0.2s ease;
-}
-
-.button a:hover {
-  background: #3ba626;
-}
-
-@media (max-width: 900px) {
-  .facebook-page {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .facebook-page .text {
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 460px) {
-  .facebook-page h1 {
-    font-size: 3.5rem;
-  }
-
-  .facebook-page p {
-    font-size: 1.3rem;
-  }
-
-  form {
-    padding: 15px;
-  }
+.buttons .check-word:hover {
+  background: #2c52ed;
 }
