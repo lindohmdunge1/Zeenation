@@ -1,126 +1,162 @@
-:root {
-  --main-bg-color: #fff;
-  --main-text-color: #888888;
-}
-
-[data-theme="dark"] {
-  --main-bg-color: #1e1f26;
-  --main-text-color: #ccc;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  /* 		transition: all ease 0.2s; */
+  font-family: "Roboto", sans-serif;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding: 0 15px;
+  min-height: 100vh;
+  justify-content: center;
+  background: #f0f2f5;
+}
+
+.facebook-page {
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.facebook-page .text {
+  margin-bottom: 90px;
+}
+
+.facebook-page h1 {
+  color: #1877f2;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.facebook-page p {
+  font-size: 1.75rem;
+  white-space: nowrap;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  background-color: var(--main-bg-color);
-  position: relative;
-  transition: all ease 0.2s;
-}
-.page-header {
-  font-size: 2rem;
-  color: var(--main-text-color);
-  padding: 1em 0;
-  font-family: monospace;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  transition: all ease 0.2s;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
 
-.clock {
-  min-height: 18em;
-  min-width: 18em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--main-bg-color);
-  background-image: url("https://drive.google.com/uc?export=view&id=1SqOy9tGuUOX1cp_GcLEN0BqTfYMEV11Z");
-  background-position: center center;
-  background-size: cover;
-  border-radius: 50%;
-  border: 4px solid var(--main-bg-color);
-  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
-    inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
-    inset 0 15px 15px rgba(0, 0, 0, 0.3);
-  transition: all ease 0.2s;
-}
-.clock:before {
-  content: "";
-  height: 0.75rem;
-  width: 0.75rem;
-  background-color: var(--main-text-color);
-  border: 2px solid var(--main-bg-color);
-  position: absolute;
-  border-radius: 50%;
-  z-index: 1000;
-  transition: all ease 0.2s;
-}
-.hour,
-.min,
-.sec {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  border-radius: 50%;
-}
-.hour {
-  height: 10em;
-  width: 10em;
-}
-.hour:before {
-  content: "";
-  position: absolute;
-  height: 50%;
-  width: 6px;
-  background-color: var(--main-text-color);
+form input {
+  height: 55px;
+  width: 100%;
+  border: 1px solid #ccc;
   border-radius: 6px;
-}
-.min {
-  height: 12em;
-  width: 12em;
-}
-.min:before {
-  content: "";
-  height: 50%;
-  width: 4px;
-  background-color: var(--main-text-color);
-  border-radius: 4px;
-}
-.sec {
-  height: 13em;
-  width: 13em;
-}
-.sec:before {
-  content: "";
-  height: 60%;
-  width: 2px;
-  background-color: #f00;
-  border-radius: 2px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  padding: 0 14px;
 }
 
-/* Style for theme switch btn */
-.switch-cont {
-  margin: 2em auto;
-  /* position: absolute; */
-  bottom: 0;
-}
-.switch-cont .switch-btn {
-  font-family: monospace;
-  text-transform: uppercase;
+form input:focus {
   outline: none;
-  padding: 0.5rem 1rem;
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  border: 1px solid var(--main-text-color);
-  border-radius: 0.25rem;
+  border-color: #1877f2;
+}
+
+::placeholder {
+  color: #777;
+  font-size: 1.063rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.link .login {
+  border: none;
+  outline: none;
   cursor: pointer;
-  transition: all ease 0.3s;
+  background: #1877f2;
+  padding: 15px 0;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.link .login:hover {
+  background: #0d65d9;
+}
+
+form a {
+  text-decoration: none;
+}
+
+.link .forgot {
+  color: #1877f2;
+  font-size: 0.875rem;
+}
+
+.link .forgot:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button a {
+  padding: 15px 20px;
+  background: #42b72a;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.063rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.button a:hover {
+  background: #3ba626;
+}
+
+@media (max-width: 900px) {
+  .facebook-page {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .facebook-page .text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .facebook-page h1 {
+    font-size: 3.5rem;
+  }
+
+  .facebook-page p {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 15px;
+  }
 }
